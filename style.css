@@ -3,8 +3,11 @@
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #111827;
-  background: #f7f8fb;
+  --text: #2b1f1d; /* dark coffee */
+  --muted: #6b504b;
+  --cream: #fff7ec;
+  --bg: #fbf7f4;
+  --coffee: #4b2e2a; /* primary brown */
 }
 
 * {
@@ -18,7 +21,8 @@ body {
 }
 
 body {
-  background: linear-gradient(180deg, #ffffff 0%, #f3f5f8 100%);
+  background: linear-gradient(180deg, var(--cream) 0%, var(--bg) 100%);
+  color: var(--text);
 }
 
 img {
@@ -35,9 +39,9 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(16px);
-  background: rgba(255, 255, 255, 0.86);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(8px);
+  background: rgba(255, 247, 236, 0.9);
+  border-bottom: 1px solid rgba(75, 46, 42, 0.06);
 }
 
 .nav-container {
@@ -49,7 +53,7 @@ img {
 }
 
 .brand {
-  color: #111827;
+  color: var(--coffee);
   font-weight: 700;
   font-size: 1.1rem;
   text-decoration: none;
@@ -61,13 +65,13 @@ img {
 }
 
 .nav-menu a {
-  color: #334155;
+  color: var(--muted);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav-menu a:hover {
-  color: #0f172a;
+  color: var(--coffee);
 }
 
 .hero-section {
@@ -80,9 +84,9 @@ img {
 
 .eyebrow {
   margin: 0 0 1rem;
-  color: #6366f1;
+  color: var(--coffee);
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-size: 0.76rem;
 }
@@ -91,16 +95,16 @@ img {
 .about-section h2,
 .contact-section h2 {
   margin: 0;
-  font-size: clamp(2.75rem, 4vw, 4.5rem);
+  font-size: clamp(2.4rem, 4vw, 4rem);
   line-height: 1.02;
-  letter-spacing: -0.04em;
-  color: #0f172a;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .hero-text {
   margin: 1.5rem 0 2.5rem;
-  max-width: 36rem;
-  color: #475569;
+  max-width: 48rem;
+  color: var(--muted);
   font-size: 1.05rem;
 }
 
@@ -108,19 +112,19 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 1.6rem;
+  padding: 0.9rem 1.4rem;
   border-radius: 999px;
   border: none;
-  background: #4338ca;
-  color: #fff;
+  background: var(--coffee);
+  color: var(--cream);
   text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.2s ease, background 0.2s ease;
+  font-weight: 700;
+  transition: transform 0.16s ease, background 0.16s ease;
 }
 
 .button:hover {
-  transform: translateY(-1px);
-  background: #3730a3;
+  transform: translateY(-2px);
+  background: #38231f;
 }
 
 .about-section {
@@ -141,9 +145,9 @@ img {
 
 .about-card {
   background: #fff;
-  border-radius: 28px;
+  border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 40px rgba(43, 31, 30, 0.06);
   display: grid;
   gap: 1rem;
 }
@@ -151,19 +155,19 @@ img {
 .about-item {
   padding: 1rem 1.2rem;
   border-radius: 18px;
-  background: #f8fafc;
+  background: #fff8f4;
 }
 
 .about-item span {
   display: block;
   font-size: 0.88rem;
-  color: #64748b;
+  color: var(--muted);
   margin-bottom: 0.5rem;
 }
 
 .about-item strong {
   display: block;
-  color: #0f172a;
+  color: var(--text);
   font-size: 1.05rem;
 }
 
@@ -174,24 +178,50 @@ img {
 .contact-card {
   display: grid;
   gap: 1.5rem;
-  background: #111827;
-  color: #f8fafc;
-  border-radius: 32px;
-  padding: 3rem;
-  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.18);
+  background: #3b2b28;
+  color: var(--cream);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 60px rgba(43, 31, 30, 0.14);
 }
 
 .contact-card p {
-  color: #cbd5e1;
+  color: #e2d6d2;
 }
 
 .button-secondary {
-  background: #fff;
-  color: #111827;
+  background: var(--cream);
+  color: var(--coffee);
 }
 
 .button-secondary:hover {
-  background: #e2e8f0;
+  background: #fff1e6;
+}
+
+/* Coffee grid/cards */
+.coffee-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.coffee-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(43, 31, 30, 0.06);
+}
+
+.coffee-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--coffee);
+}
+
+.coffee-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
 }
 
 @media (max-width: 850px) {
