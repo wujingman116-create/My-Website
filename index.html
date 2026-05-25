@@ -572,55 +572,65 @@
         <div class="skill-card-num">02</div>
         <h3>Milk Steaming</h3>
         <p>Different drinks require different milk textures. The key is controlling how much air you introduce and for how long.</p>
-        <div class="foam-compare">
-          <div class="foam-card">
-            <h4>Flat White</h4>
-            <div class="foam-vis">
-              <div class="foam-layers">
-                <div class="layer" style="flex:1;background:#3d1f0d;color:rgba(245,240,232,0.6);">espresso</div>
-                <div class="layer" style="flex:2;background:#c4944a;color:rgba(26,15,7,0.6);">steamed milk</div>
-                <div class="layer" style="flex:0.5;background:rgba(255,255,255,0.9);color:rgba(26,15,7,0.5);">microfoam</div>
-              </div>
-            </div>
-            <ul>
-              <li>Very thin foam layer</li>
-              <li>Air injection: ~2 sec</li>
-              <li>Silky, velvety texture</li>
-              <li>Temp: 55–60°C</li>
-            </ul>
-          </div>
-          <div class="foam-card">
-            <h4>Latte</h4>
-            <div class="foam-vis">
-              <div class="foam-layers">
-                <div class="layer" style="flex:1;background:#3d1f0d;color:rgba(245,240,232,0.6);">espresso</div>
-                <div class="layer" style="flex:2.5;background:#c4944a;color:rgba(26,15,7,0.6);">steamed milk</div>
-                <div class="layer" style="flex:1;background:rgba(255,255,255,0.9);color:rgba(26,15,7,0.5);">light foam</div>
-              </div>
-            </div>
-            <ul>
-              <li>Light foam layer</li>
-              <li>Air injection: ~3–4 sec</li>
-              <li>Smooth, milky</li>
-              <li>Temp: 60–65°C</li>
-            </ul>
-          </div>
-          <div class="foam-card">
-            <h4>Cappuccino</h4>
-            <div class="foam-vis">
-              <div class="foam-layers">
-                <div class="layer" style="flex:1;background:#3d1f0d;color:rgba(245,240,232,0.6);">espresso</div>
-                <div class="layer" style="flex:1.5;background:#c4944a;color:rgba(26,15,7,0.6);">steamed milk</div>
-                <div class="layer" style="flex:1.5;background:rgba(255,255,255,0.92);color:rgba(26,15,7,0.5);">thick foam</div>
-              </div>
-            </div>
-            <ul>
-              <li>Thick foam cap</li>
-              <li>Air injection: ~6–7 sec</li>
-              <li>Dry, airy top</li>
-              <li>Temp: 60–65°C</li>
-            </ul>
-          </div>
+        <div style="margin: 1.5rem 0; background: #faf6ef; padding: 1.5rem;">
+          <svg width="100%" viewBox="0 0 680 420" role="img">
+            <title>Coffee drink comparison: Flat White, Cappuccino, Latte</title>
+            <desc>Three coffee cups showing size and foam layer differences</desc>
+            <defs>
+              <linearGradient id="espresso-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2d1106"/><stop offset="100%" stop-color="#1a0a04"/></linearGradient>
+              <linearGradient id="milk-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8894a"/><stop offset="100%" stop-color="#a86830"/></linearGradient>
+              <linearGradient id="foam-g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f5ede0"/><stop offset="100%" stop-color="#e8d5bc"/></linearGradient>
+              <linearGradient id="cup-g" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#d4c4b0"/><stop offset="40%" stop-color="#ede0ce"/><stop offset="100%" stop-color="#c8b89a"/></linearGradient>
+            </defs>
+            <text x="340" y="38" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#3d1f0d">Milk Coffee Comparison</text>
+            <text x="340" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#8a6040">Same espresso base — different milk ratio and foam thickness</text>
+            <path d="M155,310 L171,185 L219,185 L235,310 Z" fill="url(#cup-g)" stroke="#b8a88a" stroke-width="0.8"/>
+            <path d="M160,300 L230,300 L230,268 L160,268 Z" fill="url(#espresso-g)"/>
+            <path d="M160,268 L230,268 L230,205 L160,205 Z" fill="url(#milk-g)"/>
+            <path d="M160,205 L230,205 L230,195 L160,195 Z" fill="url(#foam-g)"/>
+            <ellipse cx="193" cy="200" rx="18" ry="3" fill="#c87840" opacity="0.6"/>
+            <rect x="171" y="183" width="48" height="5" rx="2" fill="#d4c4b0" stroke="#b8a88a" stroke-width="0.5"/>
+            <ellipse cx="195" cy="316" rx="48" ry="7" fill="#e0d0bc" stroke="#b8a88a" stroke-width="0.5"/>
+            <path d="M235,248 Q253,248 253,270 Q253,292 235,292" fill="none" stroke="#c8b89a" stroke-width="3" stroke-linecap="round"/>
+            <text x="195" y="345" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="600" fill="#3d1f0d">Flat White</text>
+            <text x="195" y="362" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#8a6040">200ml · thin microfoam</text>
+            <path d="M295,310 L311,170 L369,170 L385,310 Z" fill="url(#cup-g)" stroke="#b8a88a" stroke-width="0.8"/>
+            <path d="M300,300 L380,300 L380,268 L300,268 Z" fill="url(#espresso-g)"/>
+            <path d="M300,268 L380,268 L380,225 L300,225 Z" fill="url(#milk-g)"/>
+            <path d="M300,225 L380,225 L380,180 L300,180 Z" fill="url(#foam-g)"/>
+            <circle cx="325" cy="205" r="2" fill="#8a4020" opacity="0.5"/>
+            <circle cx="340" cy="200" r="2.5" fill="#8a4020" opacity="0.4"/>
+            <circle cx="357" cy="205" r="1.5" fill="#8a4020" opacity="0.5"/>
+            <circle cx="332" cy="214" r="1.5" fill="#8a4020" opacity="0.35"/>
+            <circle cx="350" cy="213" r="2" fill="#8a4020" opacity="0.4"/>
+            <rect x="311" y="168" width="58" height="5" rx="2" fill="#d4c4b0" stroke="#b8a88a" stroke-width="0.5"/>
+            <ellipse cx="340" cy="316" rx="52" ry="7" fill="#e0d0bc" stroke="#b8a88a" stroke-width="0.5"/>
+            <path d="M385,248 Q403,248 403,270 Q403,292 385,292" fill="none" stroke="#c8b89a" stroke-width="3" stroke-linecap="round"/>
+            <text x="340" y="345" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="600" fill="#3d1f0d">Cappuccino</text>
+            <text x="340" y="362" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#8a6040">200ml · thick dry foam</text>
+            <path d="M440,315 L458,160 L518,160 L536,315 Z" fill="url(#cup-g)" stroke="#b8a88a" stroke-width="0.8"/>
+            <path d="M445,304 L531,304 L531,270 L445,270 Z" fill="url(#espresso-g)"/>
+            <path d="M445,270 L531,270 L531,190 L445,190 Z" fill="url(#milk-g)"/>
+            <path d="M445,190 L531,190 L531,172 L445,172 Z" fill="url(#foam-g)"/>
+            <path d="M470,182 Q487,176 504,182" stroke="#c87840" stroke-width="1.5" fill="none" opacity="0.6" stroke-linecap="round"/>
+            <rect x="458" y="158" width="60" height="5" rx="2" fill="#d4c4b0" stroke="#b8a88a" stroke-width="0.5"/>
+            <ellipse cx="488" cy="322" rx="58" ry="8" fill="#e0d0bc" stroke="#b8a88a" stroke-width="0.5"/>
+            <path d="M536,255 Q557,255 557,278 Q557,302 536,302" fill="none" stroke="#c8b89a" stroke-width="3" stroke-linecap="round"/>
+            <text x="488" y="352" text-anchor="middle" font-family="Georgia, serif" font-size="15" font-weight="600" fill="#3d1f0d">Latte</text>
+            <text x="488" y="369" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#8a6040">280ml · light foam</text>
+            <line x1="148" y1="287" x2="118" y2="287" stroke="#8a6040" stroke-width="0.7" stroke-dasharray="3 2"/>
+            <text x="114" y="291" text-anchor="end" font-family="Georgia, serif" font-size="9" fill="#8a6040">espresso</text>
+            <line x1="148" y1="238" x2="118" y2="238" stroke="#8a6040" stroke-width="0.7" stroke-dasharray="3 2"/>
+            <text x="114" y="242" text-anchor="end" font-family="Georgia, serif" font-size="9" fill="#8a6040">steamed milk</text>
+            <line x1="152" y1="200" x2="118" y2="200" stroke="#8a6040" stroke-width="0.7" stroke-dasharray="3 2"/>
+            <text x="114" y="204" text-anchor="end" font-family="Georgia, serif" font-size="9" fill="#8a6040">foam</text>
+            <line x1="533" y1="287" x2="560" y2="287" stroke="#8a6040" stroke-width="0.7" stroke-dasharray="3 2"/>
+            <text x="564" y="291" font-family="Georgia, serif" font-size="9" fill="#8a6040">espresso</text>
+            <line x1="533" y1="230" x2="560" y2="230" stroke="#8a6040" stroke-width="0.7" stroke-dasharray="3 2"/>
+            <text x="564" y="234" font-family="Georgia, serif" font-size="9" fill="#8a6040">steamed milk</text>
+            <line x1="533" y1="181" x2="560" y2="181" stroke="#8a6040" stroke-width="0.7" stroke-dasharray="3 2"/>
+            <text x="564" y="185" font-family="Georgia, serif" font-size="9" fill="#8a6040">foam</text>
+          </svg>
         </div>
  
         <p style="font-size:0.85rem;color:rgba(26,15,7,0.6);margin-top:1rem;margin-bottom:0.75rem;">Available milk options at most Australian cafés:</p>
@@ -643,7 +653,7 @@
  
   <div class="drinks-grid">
     <div class="drink-card">
-      <div class="drink-img" style="background:#2a1408;">☕</div>
+      <div class="drink-img" style="background:#e8dfd0;">☕</div>
       <div class="drink-body">
         <h3>Flat White</h3>
         <p>Australia's signature — a double shot with velvety microfoam and minimal foam. Usually served in a smaller ceramic cup.</p>
@@ -651,7 +661,7 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#b07840;">🥛</div>
+      <div class="drink-img" style="background:#e8dfd0;">🥛</div>
       <div class="drink-body">
         <h3>Latte</h3>
         <p>Double shot with more steamed milk and a light foam top. Can be made as chai latte, matcha latte, or turmeric latte.</p>
@@ -659,7 +669,7 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#7a4520;">🎨</div>
+      <div class="drink-img" style="background:#e8dfd0;">🎨</div>
       <div class="drink-body">
         <h3>Cappuccino</h3>
         <p>Equal thirds: espresso, steamed milk, and thick foam. Often dusted with cocoa powder on top.</p>
@@ -667,7 +677,7 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#1a0f07;">🖤</div>
+      <div class="drink-img" style="background:#e8dfd0;">🖤</div>
       <div class="drink-body">
         <h3>Long Black</h3>
         <p>Hot water first, then a double shot poured over the top. Preserves the crema. Stronger than an Americano.</p>
@@ -675,7 +685,7 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#5c2d12;">🔬</div>
+      <div class="drink-img" style="background:#e8dfd0;">🔬</div>
       <div class="drink-body">
         <h3>Piccolo</h3>
         <p>A single ristretto (1:1 ratio) topped with steamed milk in a small demitasse — rich and concentrated.</p>
@@ -683,7 +693,7 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#4a2c1a;">🍫</div>
+      <div class="drink-img" style="background:#e8dfd0;">🍫</div>
       <div class="drink-body">
         <h3>Mocha</h3>
         <p>Double shot with chocolate sauce or powder, then steamed milk. Often topped with whipped cream or cocoa dust.</p>
@@ -691,7 +701,7 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#8b5e3c;">🍂</div>
+      <div class="drink-img" style="background:#e8dfd0;">🍂</div>
       <div class="drink-body">
         <h3>Chai Latte</h3>
         <p>Spiced chai concentrate or powder with steamed milk. No espresso. Very popular in Australian cafés.</p>
@@ -699,7 +709,7 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#4a6741;">🍵</div>
+      <div class="drink-img" style="background:#e8dfd0;">🍵</div>
       <div class="drink-body">
         <h3>Matcha Latte</h3>
         <p>Matcha powder whisked with hot water or milk, then topped with steamed milk. Increasingly popular across Australia.</p>
@@ -707,13 +717,25 @@
       </div>
     </div>
     <div class="drink-card">
-      <div class="drink-img" style="background:#3d2a0f; position:relative;">
-        <span style="font-size:0.7rem;position:absolute;bottom:0.5rem;right:0.75rem;color:var(--caramel);letter-spacing:0.08em;">COMING SOON</span>⚡
+      <div class="drink-img" style="background:#2a1a0a; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.3rem;">
+        <span style="font-size:0.6rem;letter-spacing:0.12em;color:var(--caramel);text-transform:uppercase;font-weight:500;">Advanced</span>
+        <span style="font-size:2rem;">👂</span>
       </div>
       <div class="drink-body">
-        <h3>Advanced Tips</h3>
-        <p>Steaming multiple milks simultaneously during a rush — a key skill for busy cafés.</p>
-        <span class="coming-soon">More tips coming soon</span>
+        <h3>Steaming by Sound</h3>
+        <p>Learn to identify milk texture by sound alone — the pitch and rhythm tells you when foam is right, before you even look at the jug.</p>
+        <span class="coming-soon">Coming soon</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#1a1208; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.3rem;">
+        <span style="font-size:0.6rem;letter-spacing:0.12em;color:var(--caramel);text-transform:uppercase;font-weight:500;">Advanced</span>
+        <span style="font-size:2rem;">⚡</span>
+      </div>
+      <div class="drink-body">
+        <h3>Multi-Milk Rush</h3>
+        <p>Steaming multiple milks simultaneously during a busy service — managing two jugs, prioritising drinks, maintaining quality under pressure.</p>
+        <span class="coming-soon">Coming soon</span>
       </div>
     </div>
   </div>
@@ -928,6 +950,13 @@
   </div>
 </section>
  
+<section style="background:var(--espresso); padding:80px 8%; text-align:center;">
+  <p class="section-eyebrow" style="text-align:center;">Explore More</p>
+  <h2 class="section-title" style="color:var(--cream); text-align:center; margin-bottom:1rem;">Australian Café Recommendations</h2>
+  <p style="color:rgba(245,240,232,0.55); font-size:1rem; max-width:480px; margin:0 auto 2.5rem; line-height:1.8;">A curated guide to standout cafés across Sydney and Newcastle — great for inspiration, learning, and finding potential employers.</p>
+  <span style="display:inline-block; padding:0.75rem 2.5rem; border:1px dashed rgba(196,127,58,0.5); color:var(--caramel); font-size:0.8rem; letter-spacing:0.18em; text-transform:uppercase;">Coming Soon</span>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <span class="brand">Your First Café Job in Australia</span>
