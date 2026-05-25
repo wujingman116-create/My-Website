@@ -501,18 +501,52 @@
       margin-top: 1rem;
     }
  
+    /* NAV TOGGLE (hidden on desktop) */
+    .nav-toggle {
+      display: none;
+      background: none; border: none; cursor: pointer;
+      font-size: 1.5rem; color: var(--coffee);
+      padding: 0.25rem; line-height: 1;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       nav { padding: 0 5%; }
-      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none; flex-direction: column; gap: 0; list-style: none;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: rgba(245,240,232,0.97);
+        padding: 1.25rem 5%;
+        border-bottom: 1px solid rgba(196,127,58,0.2);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { padding: 0.6rem 0; }
+      .nav-links a { font-size: 0.9rem; }
+
       section { padding: 70px 5%; }
+
+      .hero { padding: 0 5%; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn-primary,
+      .hero-ctas .btn-outline { text-align: center; }
+
       .skills-grid { grid-template-columns: 1fr; }
       .foam-compare { grid-template-columns: 1fr; }
       .milk-grid { grid-template-columns: repeat(3,1fr); }
       .drinks-grid { grid-template-columns: 1fr; }
       .channel-grid { grid-template-columns: 1fr; }
-      .vocab-panel.active { grid-template-columns: 1fr 1fr; }
+      .vocab-tabs { flex-wrap: wrap; }
+      .vocab-panel.active { grid-template-columns: 1fr; }
       .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      body { font-size: 16px; }
+      .form-field input,
+      .form-field textarea { font-size: 16px; }
+
+      .hero-rings { display: none; }
+      .coming-soon-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -521,6 +555,7 @@
 <!-- NAV -->
 <nav>
   <a href="#home" class="nav-brand">Your First Café Job in Australia</a>
+  <button class="nav-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#jobpath">Job Path</a></li>
@@ -723,7 +758,7 @@
 <section style="background:var(--espresso);padding:80px 8%;text-align:center;">
   <p class="section-eyebrow" style="text-align:center;">Coming Soon</p>
   <h2 class="section-title" style="color:var(--cream);text-align:center;margin-bottom:3rem;">More to explore</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:700px;margin:0 auto;">
+  <div class="coming-soon-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:700px;margin:0 auto;">
     <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(196,127,58,0.15);padding:2.5rem;text-align:left;">
       <p style="font-size:0.7rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--caramel);margin-bottom:0.75rem;">Advanced Skills</p>
       <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--cream);margin-bottom:0.75rem;">Barista Techniques</h3>
@@ -986,6 +1021,11 @@
     document.getElementById('formSuccess').style.display = 'block';
     this.reset();
   });
+</script>
+<script>
+function toggleMenu() {
+  document.querySelector('.nav-links').classList.toggle('open');
+}
 </script>
 <script type="text/javascript">
 function googleTranslateElementInit() {
