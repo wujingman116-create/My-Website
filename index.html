@@ -26,7 +26,7 @@
       background: var(--cream);
       color: var(--espresso);
       font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
+      font-weight: 400;
       overflow-x: hidden;
     }
  
@@ -54,6 +54,13 @@
       transition: opacity 0.2s;
     }
     .nav-links a:hover { opacity: 1; color: var(--caramel); }
+    #google_translate_element { display: flex; align-items: center; }
+    .goog-te-gadget-simple { border: 1px solid rgba(196,127,58,0.3) !important; background: transparent !important; padding: 0.3rem 0.75rem !important; font-size: 0.75rem !important; cursor: pointer; }
+    .goog-te-gadget-simple span { color: var(--coffee) !important; }
+    .goog-te-gadget-simple .goog-te-menu-value span { color: var(--coffee) !important; }
+    .VIpgJd-ZVi9od-aZ2wEe-wOHMyf { display: none !important; }
+    body { top: 0 !important; }
+    .skiptranslate { display: none !important; }
  
     /* HERO */
     .hero {
@@ -166,7 +173,7 @@
       color: var(--coffee); margin-bottom: 0.75rem;
     }
     .skill-card p {
-      font-size: 0.9rem; line-height: 1.75;
+      font-size: 1rem; line-height: 1.75;
       color: rgba(26,15,7,0.7);
     }
     .skill-note {
@@ -268,7 +275,7 @@
       font-size: 1.1rem; color: var(--coffee);
       margin-bottom: 0.5rem;
     }
-    .drink-body p { font-size: 0.82rem; line-height: 1.7; color: rgba(26,15,7,0.65); }
+    .drink-body p { font-size: 0.9rem; line-height: 1.7; color: rgba(26,15,7,0.65); }
     .drink-ratio {
       display: inline-block; margin-top: 0.6rem;
       padding: 0.2rem 0.6rem;
@@ -316,7 +323,7 @@
       margin-bottom: 0.75rem;
     }
     .path-step p {
-      font-size: 0.9rem; line-height: 1.8;
+      font-size: 1rem; line-height: 1.8;
       color: rgba(245,240,232,0.6);
     }
     .path-step ul {
@@ -392,7 +399,7 @@
       margin-bottom: 0.25rem;
     }
     .vocab-zh { font-size: 0.8rem; color: rgba(26,15,7,0.5); margin-bottom: 0.4rem; }
-    .vocab-def { font-size: 0.8rem; color: rgba(26,15,7,0.65); line-height: 1.6; }
+    .vocab-def { font-size: 1rem; color: rgba(26,15,7,0.65); line-height: 1.6; }
  
     /* ── SECTION 4: FAQ ── */
     #faq { background: var(--foam); }
@@ -423,7 +430,7 @@
     .faq-a {
       max-height: 0; overflow: hidden;
       transition: max-height 0.35s ease, padding 0.3s;
-      font-size: 0.9rem; line-height: 1.8;
+      font-size: 1rem; line-height: 1.8;
       color: rgba(26,15,7,0.65);
     }
     .faq-item.open .faq-a {
@@ -522,6 +529,7 @@
     <li><a href="#vocab">Vocabulary</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
+  <div id="google_translate_element"></div>
 </nav>
  
 <!-- HERO -->
@@ -981,5 +989,16 @@
     this.reset();
   });
 </script>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'zh-CN,zh-TW,vi,ko,ja,th,id,es,fr,ar',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
