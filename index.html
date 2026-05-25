@@ -1,124 +1,971 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Australian Coffee Guide</title>
-    <link rel="stylesheet" href="style.css" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B6HGFQM20J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-B6HGFQM20J');
-</script>  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Find a Barista Job in Australia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #f5f0e8;
+      --espresso: #1a0f07;
+      --coffee: #3d1f0d;
+      --caramel: #c47f3a;
+      --latte: #d4a96a;
+      --foam: #faf6ef;
+      --steam: #e8dfd0;
+      --accent: #b85c2a;
+    }
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      background: var(--cream);
+      color: var(--espresso);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+ 
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(245,240,232,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196,127,58,0.2);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--coffee); text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--coffee);
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--caramel); }
+ 
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      background: var(--espresso);
+      position: relative; overflow: hidden;
+      padding: 0 8%;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, #3d1f0d 0%, #1a0f07 60%);
+    }
+    .hero-rings {
+      position: absolute; right: -10%; top: 50%;
+      transform: translateY(-50%);
+      width: 600px; height: 600px;
+    }
+    .hero-rings circle {
+      fill: none; stroke: rgba(196,127,58,0.12);
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 680px; }
+    .hero-eyebrow {
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--caramel);
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; display: block;
+      width: 32px; height: 1px; background: var(--caramel);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900; line-height: 1.08;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: italic; color: var(--latte);
+    }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(245,240,232,0.65);
+      line-height: 1.75; margin-bottom: 2.5rem; max-width: 520px;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; padding: 0.9rem 2rem;
+      background: var(--caramel); color: var(--cream);
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-primary:hover { background: var(--accent); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-block; padding: 0.9rem 2rem;
+      background: transparent; color: var(--cream);
+      border: 1px solid rgba(245,240,232,0.3);
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { border-color: var(--latte); color: var(--latte); }
+ 
+    /* SECTION BASE */
+    section { padding: 100px 8%; }
+    .section-eyebrow {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--caramel);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--coffee); margin-bottom: 1rem;
+    }
+    .section-lead {
+      font-size: 1rem; color: rgba(26,15,7,0.6);
+      line-height: 1.8; max-width: 560px; margin-bottom: 3.5rem;
+    }
+ 
+    /* ── SECTION 1: SKILLS ── */
+    #skills { background: var(--foam); }
+ 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-bottom: 4rem;
+    }
+    .skill-card {
+      background: var(--cream);
+      padding: 2.5rem;
+      transition: background 0.2s;
+    }
+    .skill-card:hover { background: #fff; }
+    .skill-card-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900;
+      color: rgba(196,127,58,0.2);
+      line-height: 1; margin-bottom: 1rem;
+    }
+    .skill-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--coffee); margin-bottom: 0.75rem;
+    }
+    .skill-card p {
+      font-size: 0.9rem; line-height: 1.75;
+      color: rgba(26,15,7,0.7);
+    }
+    .skill-note {
+      display: inline-block; margin-top: 0.75rem;
+      font-size: 0.78rem; color: var(--accent);
+      font-style: italic;
+    }
+ 
+    /* Extraction params table */
+    .params-table {
+      width: 100%; border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .params-table td {
+      padding: 0.6rem 0.75rem;
+      font-size: 0.85rem; border-bottom: 1px solid var(--steam);
+    }
+    .params-table td:first-child {
+      font-weight: 500; color: var(--coffee);
+      width: 42%;
+    }
+    .params-table td:last-child { color: rgba(26,15,7,0.65); }
+ 
+    /* Milk foam comparison */
+    .foam-compare {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem; margin: 2rem 0;
+    }
+    .foam-card {
+      background: var(--cream); padding: 1.5rem;
+      border-top: 3px solid var(--caramel);
+    }
+    .foam-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--coffee);
+      margin-bottom: 0.5rem;
+    }
+    .foam-card .foam-vis {
+      height: 48px; border-radius: 4px;
+      margin-bottom: 0.75rem; position: relative; overflow: hidden;
+    }
+    .foam-espresso { background: #3d1f0d; }
+    .foam-milk { background: #d4a96a; }
+    .foam-top { background: rgba(255,255,255,0.85); }
+    .foam-layers {
+      height: 100%; display: flex; flex-direction: column;
+    }
+    .layer {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: rgba(26,15,7,0.6);
+    }
+    .foam-card ul {
+      list-style: none; font-size: 0.82rem; line-height: 1.8;
+      color: rgba(26,15,7,0.65);
+    }
+    .foam-card ul li::before { content: '— '; color: var(--caramel); }
+ 
+    /* Milk types */
+    .milk-grid {
+      display: grid; grid-template-columns: repeat(5,1fr);
+      gap: 1rem; margin-top: 1.5rem;
+    }
+    .milk-tag {
+      padding: 0.75rem; text-align: center;
+      background: var(--cream); border: 1px solid var(--steam);
+      font-size: 0.82rem;
+    }
+    .milk-tag strong { display: block; font-weight: 500; color: var(--coffee); margin-bottom: 0.2rem; }
+    .milk-tag span { font-size: 0.72rem; color: rgba(26,15,7,0.5); }
+ 
+    /* Drinks grid */
+    .drinks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 2rem;
+    }
+    .drink-card {
+      background: var(--cream);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+    }
+    .drink-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,15,7,0.12); }
+    .drink-img {
+      height: 180px;
+      background: var(--steam);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; position: relative; overflow: hidden;
+    }
+    .drink-img::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(26,15,7,0.15));
+    }
+    .drink-body { padding: 1.4rem; }
+    .drink-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--coffee);
+      margin-bottom: 0.5rem;
+    }
+    .drink-body p { font-size: 0.82rem; line-height: 1.7; color: rgba(26,15,7,0.65); }
+    .drink-ratio {
+      display: inline-block; margin-top: 0.6rem;
+      padding: 0.2rem 0.6rem;
+      background: var(--steam); font-size: 0.72rem;
+      font-weight: 500; color: var(--coffee);
+      letter-spacing: 0.04em;
+    }
+ 
+    /* ── SECTION 2: JOB PATH ── */
+    #jobpath { background: var(--espresso); }
+    #jobpath .section-title { color: var(--cream); }
+    #jobpath .section-lead { color: rgba(245,240,232,0.55); }
+ 
+    .path-timeline {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+    .path-timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 8px; bottom: 8px;
+      width: 1px; background: rgba(196,127,58,0.3);
+    }
+    .path-step {
+      position: relative; margin-bottom: 3rem;
+      padding: 2rem; background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,127,58,0.15);
+      transition: background 0.2s;
+    }
+    .path-step:hover { background: rgba(255,255,255,0.07); }
+    .path-step::before {
+      content: '';
+      position: absolute; left: -2.5rem; top: 2rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--caramel);
+      transform: translateX(-4px);
+    }
+    .step-num {
+      font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--caramel);
+      margin-bottom: 0.5rem;
+    }
+    .path-step h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+    .path-step p {
+      font-size: 0.9rem; line-height: 1.8;
+      color: rgba(245,240,232,0.6);
+    }
+    .path-step ul {
+      margin-top: 0.75rem; padding-left: 1.2rem;
+      font-size: 0.88rem; line-height: 2;
+      color: rgba(245,240,232,0.6);
+    }
+    .path-step a {
+      color: var(--latte); text-decoration: none;
+    }
+    .path-step a:hover { text-decoration: underline; }
+ 
+    .salary-bar {
+      display: flex; gap: 1.5rem; margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .salary-tag {
+      padding: 0.6rem 1.2rem;
+      border: 1px solid rgba(196,127,58,0.3);
+      font-size: 0.82rem; color: var(--latte);
+    }
+    .salary-tag strong { display: block; font-size: 1.1rem; color: var(--caramel); }
+ 
+    .channel-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; margin-top: 1.5rem;
+      background: rgba(196,127,58,0.15);
+    }
+    .channel {
+      background: rgba(26,15,7,0.6); padding: 1.5rem;
+    }
+    .channel-badge {
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 0.2rem 0.5rem;
+      margin-bottom: 0.75rem; display: inline-block;
+    }
+    .badge-best { background: var(--caramel); color: var(--cream); }
+    .badge-good { background: rgba(196,127,58,0.25); color: var(--latte); }
+    .channel h4 { font-size: 0.95rem; color: var(--cream); margin-bottom: 0.4rem; }
+    .channel p { font-size: 0.82rem; color: rgba(245,240,232,0.5); line-height: 1.65; }
+ 
+    /* ── SECTION 3: VOCABULARY ── */
+    #vocab { background: var(--cream); }
+ 
+    .vocab-tabs {
+      display: flex; gap: 0; margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--steam);
+    }
+    .vocab-tab {
+      padding: 0.75rem 1.75rem;
+      font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; cursor: pointer;
+      background: none; border: none;
+      color: rgba(26,15,7,0.45); border-bottom: 2px solid transparent;
+      margin-bottom: -1px; transition: all 0.2s;
+    }
+    .vocab-tab.active {
+      color: var(--coffee); border-bottom-color: var(--caramel);
+    }
+    .vocab-tab:hover { color: var(--coffee); }
+ 
+    .vocab-panel { display: none; }
+    .vocab-panel.active { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--steam); }
+ 
+    .vocab-item {
+      background: var(--foam); padding: 1.4rem 1.6rem;
+      transition: background 0.15s;
+    }
+    .vocab-item:hover { background: #fff; }
+    .vocab-en {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--coffee);
+      margin-bottom: 0.25rem;
+    }
+    .vocab-zh { font-size: 0.8rem; color: rgba(26,15,7,0.5); margin-bottom: 0.4rem; }
+    .vocab-def { font-size: 0.8rem; color: rgba(26,15,7,0.65); line-height: 1.6; }
+ 
+    /* ── SECTION 4: FAQ ── */
+    #faq { background: var(--foam); }
+    .faq-list { max-width: 760px; }
+    .faq-item {
+      border-bottom: 1px solid var(--steam);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; text-align: left; background: none; border: none;
+      padding: 1.4rem 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1rem;
+    }
+    .faq-q span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--coffee); font-weight: 700;
+      text-align: left;
+    }
+    .faq-icon {
+      width: 28px; height: 28px; flex-shrink: 0;
+      border: 1px solid var(--steam); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: var(--caramel);
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      font-size: 0.9rem; line-height: 1.8;
+      color: rgba(26,15,7,0.65);
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px; padding-bottom: 1.4rem;
+    }
+ 
+    /* Contact form */
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; margin-top: 5rem; align-items: start;
+    }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: var(--coffee); margin-bottom: 1rem;
+    }
+    .contact-info p {
+      font-size: 0.9rem; color: rgba(26,15,7,0.6); line-height: 1.8;
+    }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-field {
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .form-field label {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(26,15,7,0.5);
+    }
+    .form-field input,
+    .form-field textarea {
+      background: var(--cream); border: 1px solid var(--steam);
+      padding: 0.85rem 1rem; font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem; color: var(--espresso);
+      outline: none; resize: vertical;
+      transition: border-color 0.2s;
+    }
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--caramel); }
+    .form-submit {
+      padding: 0.9rem 2rem; background: var(--coffee);
+      color: var(--cream); border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: background 0.2s; align-self: flex-start;
+    }
+    .form-submit:hover { background: var(--accent); }
+    .form-success {
+      display: none; padding: 1rem; background: rgba(196,127,58,0.1);
+      border-left: 3px solid var(--caramel);
+      font-size: 0.9rem; color: var(--coffee);
+    }
+ 
+    /* FOOTER */
+    footer {
+      background: var(--espresso); padding: 3rem 8%;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    footer .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--latte);
+    }
+    footer p {
+      font-size: 0.78rem; color: rgba(245,240,232,0.35);
+    }
+ 
+    /* COMING SOON BADGE */
+    .coming-soon {
+      display: inline-block; padding: 0.4rem 1rem;
+      background: rgba(196,127,58,0.12); border: 1px dashed rgba(196,127,58,0.4);
+      font-size: 0.78rem; color: var(--caramel); letter-spacing: 0.08em;
+      margin-top: 1rem;
+    }
+ 
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 5%; }
+      .nav-links { display: none; }
+      section { padding: 70px 5%; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .foam-compare { grid-template-columns: 1fr; }
+      .milk-grid { grid-template-columns: repeat(3,1fr); }
+      .drinks-grid { grid-template-columns: 1fr; }
+      .channel-grid { grid-template-columns: 1fr; }
+      .vocab-panel.active { grid-template-columns: 1fr 1fr; }
+      .contact-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+  </style>
 </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-container">
-        <a href="#home" class="brand">Aussie Coffee</a>
-        <nav class="nav-menu">
-          <a href="#home">Home</a>
-          <a href="#guide">Coffee Guide</a>
-          <a href="#culture">Australian Coffee Culture</a>
-          <a href="#jobs">Find a Barista Job</a>
-        </nav>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-brand">Aussie Barista Guide</a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#jobpath">Job Path</a></li>
+    <li><a href="#vocab">Vocabulary</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+</nav>
+ 
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <svg class="hero-rings" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="300" cy="300" r="100" stroke-width="1"/>
+    <circle cx="300" cy="300" r="180" stroke-width="1"/>
+    <circle cx="300" cy="300" r="260" stroke-width="0.5"/>
+    <circle cx="300" cy="300" r="340" stroke-width="0.5"/>
+  </svg>
+  <div class="hero-content">
+    <p class="hero-eyebrow">A Guide for International Students</p>
+    <h1>Find a <em>Barista</em> Job in Australia</h1>
+    <p class="hero-sub">Everything you need to go from zero experience to working behind the coffee machine — skills, job application tips, and essential vocabulary.</p>
+    <div class="hero-ctas">
+      <a href="#skills" class="btn-primary">Start Learning</a>
+      <a href="#jobpath" class="btn-outline">Find a Job</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- SECTION 1: SKILLS -->
+<section id="skills">
+  <p class="section-eyebrow">Essential Skills</p>
+  <h2 class="section-title">What you need to<br>know behind the machine</h2>
+  <p class="section-lead">Practical, hands-on skills that Australian cafés actually look for — from pulling a shot to mastering milk texture.</p>
+ 
+  <!-- 1A. Extraction -->
+  <div style="margin-bottom:4rem;">
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-num">01</div>
+        <h3>Espresso Extraction</h3>
+        <p>Understanding extraction parameters is the foundation of every espresso-based drink. These figures are a general guide — always follow your store's specific standards.</p>
+        <table class="params-table">
+          <tr><td>Water Temperature</td><td>90 – 94°C</td></tr>
+          <tr><td>Coffee Dose</td><td>18 ± 0.2g (17.8 – 18.2g)</td></tr>
+          <tr><td>Espresso Yield</td><td>1:1.5 – 1:2 (dose to liquid)</td></tr>
+          <tr><td>Ristretto Yield</td><td>1:1 (more concentrated)</td></tr>
+          <tr><td>Extraction Time</td><td>~25 – 40 sec (varies)</td></tr>
+          <tr><td>Pressure</td><td>~9 bar (machine-set)</td></tr>
+        </table>
+        <span class="skill-note">* Grind finer = longer extraction. Grind coarser = faster. Adjust to hit your target time.</span>
+        <br><span class="skill-note">* Specific parameters vary by store — always ask your manager first.</span>
       </div>
-    </header>
-
-    <main>
-      <section id="home" class="hero-section">
-        <div class="container hero-content">
-          <p class="eyebrow">Brew Better</p>
-          <h1>Your Ultimate Australian Coffee Guide</h1>
-          <p class="hero-text">
-            Everything Australian baristas and coffee lovers need — recipes,
-            culture, and practical tips for finding work in the local industry.
-          </p>
-          <a href="#guide" class="button">Explore the Guide</a>
-        </div>
-      </section>
-
-      <section id="guide" class="about-section">
-        <div class="container">
-          <p class="eyebrow">Coffee Guide</p>
-          <h2>Classic Espresso-Based Drinks</h2>
-          <p class="hero-text">Quick reference for popular Australian café drinks.</p>
-
-          <div class="coffee-grid">
-            <article class="coffee-card">
-              <h3>Espresso</h3>
-              <p>Concentrated coffee brewed by forcing hot water through finely-ground beans. Basis for many café drinks.</p>
-            </article>
-
-            <article class="coffee-card">
-              <h3>Flat White</h3>
-              <p>Double espresso with velvety steamed milk and a thin layer of microfoam — an Australian favourite.</p>
-            </article>
-
-            <article class="coffee-card">
-              <h3>Cappuccino</h3>
-              <p>Espresso with equal parts steamed milk and foam, often dusted with cocoa.</p>
-            </article>
-
-            <article class="coffee-card">
-              <h3>Latte</h3>
-              <p>Espresso with more steamed milk and a light foam — smooth and milky.</p>
-            </article>
-
-            <article class="coffee-card">
-              <h3>Long Black</h3>
-              <p>Hot water topped with espresso — stronger than an Americano and popular in Australia.</p>
-            </article>
-
-            <article class="coffee-card">
-              <h3>Piccolo</h3>
-              <p>Single ristretto topped with steamed milk in a small cup — rich and compact.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="culture" class="contact-section">
-        <div class="container contact-card">
-          <div>
-            <p class="eyebrow">Australian Coffee Culture</p>
-            <h2>Why coffee matters Down Under</h2>
-            <p>
-              Australia has a strong café culture centred on quality espresso, skilled
-              baristas and neighbourhood cafes. The Flat White originated here and
-              the local scene values freshness, technique and a focus on milk texture.
-            </p>
-            <p>
-              Regional roasting, independent cafes, and busy brunch scenes make coffee
-              a social ritual as much as a morning pick-me-up.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="jobs" class="contact-section">
-        <div class="container contact-card">
-          <div>
-            <p class="eyebrow">Find a Barista Job</p>
-            <h2>Tips for finding part-time barista work in Australia</h2>
-            <p>
-              Get prepared with the right qualifications and a friendly, service-first attitude.
-            </p>
+      <div class="skill-card">
+        <div class="skill-card-num">02</div>
+        <h3>Milk Steaming</h3>
+        <p>Different drinks require different milk textures. The key is controlling how much air you introduce and for how long.</p>
+        <div class="foam-compare">
+          <div class="foam-card">
+            <h4>Flat White</h4>
+            <div class="foam-vis">
+              <div class="foam-layers">
+                <div class="layer" style="flex:1;background:#3d1f0d;color:rgba(245,240,232,0.6);">espresso</div>
+                <div class="layer" style="flex:2;background:#c4944a;color:rgba(26,15,7,0.6);">steamed milk</div>
+                <div class="layer" style="flex:0.5;background:rgba(255,255,255,0.9);color:rgba(26,15,7,0.5);">microfoam</div>
+              </div>
+            </div>
             <ul>
-              <li><strong>RSA / RCG:</strong> Responsible Service of Alcohol (or RCG) where required for venues serving alcohol.</li>
-              <li><strong>Food handler certificate:</strong> Short courses or on-site training for safe food handling.</li>
-              <li><strong>Build experience:</strong> Volunteer, do barista shifts, or roster practice at local cafés.</li>
-              <li><strong>Where to look:</strong> Seek, Indeed, Sidekicker, local café Facebook groups and community job boards.</li>
-              <li><strong>CV tips:</strong> Highlight barista experience, peak-hour availability, and customer service skills.</li>
+              <li>Very thin foam layer</li>
+              <li>Air injection: ~2 sec</li>
+              <li>Silky, velvety texture</li>
+              <li>Temp: 55–60°C</li>
             </ul>
           </div>
-          <a href="mailto:jobs@aussiecoffee.example" class="button button-secondary">
-            Contact for Job Help
-          </a>
+          <div class="foam-card">
+            <h4>Latte</h4>
+            <div class="foam-vis">
+              <div class="foam-layers">
+                <div class="layer" style="flex:1;background:#3d1f0d;color:rgba(245,240,232,0.6);">espresso</div>
+                <div class="layer" style="flex:2.5;background:#c4944a;color:rgba(26,15,7,0.6);">steamed milk</div>
+                <div class="layer" style="flex:1;background:rgba(255,255,255,0.9);color:rgba(26,15,7,0.5);">light foam</div>
+              </div>
+            </div>
+            <ul>
+              <li>Light foam layer</li>
+              <li>Air injection: ~3–4 sec</li>
+              <li>Smooth, milky</li>
+              <li>Temp: 60–65°C</li>
+            </ul>
+          </div>
+          <div class="foam-card">
+            <h4>Cappuccino</h4>
+            <div class="foam-vis">
+              <div class="foam-layers">
+                <div class="layer" style="flex:1;background:#3d1f0d;color:rgba(245,240,232,0.6);">espresso</div>
+                <div class="layer" style="flex:1.5;background:#c4944a;color:rgba(26,15,7,0.6);">steamed milk</div>
+                <div class="layer" style="flex:1.5;background:rgba(255,255,255,0.92);color:rgba(26,15,7,0.5);">thick foam</div>
+              </div>
+            </div>
+            <ul>
+              <li>Thick foam cap</li>
+              <li>Air injection: ~6–7 sec</li>
+              <li>Dry, airy top</li>
+              <li>Temp: 60–65°C</li>
+            </ul>
+          </div>
         </div>
-      </section>
-    </main>
-  </body>
+ 
+        <p style="font-size:0.85rem;color:rgba(26,15,7,0.6);margin-top:1rem;margin-bottom:0.75rem;">Available milk options at most Australian cafés:</p>
+        <div class="milk-grid">
+          <div class="milk-tag"><strong>Full Cream</strong><span>Standard</span></div>
+          <div class="milk-tag"><strong>Light</strong><span>Low-fat</span></div>
+          <div class="milk-tag"><strong>Oat</strong><span>Popular alt</span></div>
+          <div class="milk-tag"><strong>Soy</strong><span>Classic alt</span></div>
+          <div class="milk-tag"><strong>Almond</strong><span>Nut-based</span></div>
+        </div>
+        <span class="skill-note">* Plant-based milks need shorter air injection and longer steaming time — Barista editions work best.</span>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- 1B. Drinks -->
+  <p style="font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--caramel);margin-bottom:0.5rem;">Common Australian Drinks</p>
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--coffee);margin-bottom:0.5rem;">Know your menu</h3>
+  <p style="font-size:0.88rem;color:rgba(26,15,7,0.55);margin-bottom:2rem;">Every café is slightly different — recipes below are standard guides. Always confirm ratios with your manager on the first day.</p>
+ 
+  <div class="drinks-grid">
+    <div class="drink-card">
+      <div class="drink-img" style="background:#2a1408;">☕</div>
+      <div class="drink-body">
+        <h3>Flat White</h3>
+        <p>Australia's signature — a double shot with velvety microfoam and minimal foam. Usually served in a smaller ceramic cup.</p>
+        <span class="drink-ratio">Double shot · silky microfoam · ~160ml</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#b07840;">🥛</div>
+      <div class="drink-body">
+        <h3>Latte</h3>
+        <p>Double shot with more steamed milk and a light foam top. Can be made as chai latte, matcha latte, or turmeric latte.</p>
+        <span class="drink-ratio">Double shot · 220–240ml · light foam</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#7a4520;">🎨</div>
+      <div class="drink-body">
+        <h3>Cappuccino</h3>
+        <p>Equal thirds: espresso, steamed milk, and thick foam. Often dusted with cocoa powder on top.</p>
+        <span class="drink-ratio">Double shot · thick foam · cocoa dust</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#1a0f07;">🖤</div>
+      <div class="drink-body">
+        <h3>Long Black</h3>
+        <p>Hot water first, then a double shot poured over the top. Preserves the crema. Stronger than an Americano.</p>
+        <span class="drink-ratio">Double shot over hot water · ~250ml</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#5c2d12;">🔬</div>
+      <div class="drink-body">
+        <h3>Piccolo</h3>
+        <p>A single ristretto (1:1 ratio) topped with steamed milk in a small demitasse — rich and concentrated.</p>
+        <span class="drink-ratio">Single ristretto · ~90–100ml</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#4a2c1a;">🍫</div>
+      <div class="drink-body">
+        <h3>Mocha</h3>
+        <p>Double shot with chocolate sauce or powder, then steamed milk. Often topped with whipped cream or cocoa dust.</p>
+        <span class="drink-ratio">Double shot · chocolate · ~240ml</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#8b5e3c;">🍂</div>
+      <div class="drink-body">
+        <h3>Chai Latte</h3>
+        <p>Spiced chai concentrate or powder with steamed milk. No espresso. Very popular in Australian cafés.</p>
+        <span class="drink-ratio">Chai base · steamed milk · no coffee</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#4a6741;">🍵</div>
+      <div class="drink-body">
+        <h3>Matcha Latte</h3>
+        <p>Matcha powder whisked with hot water or milk, then topped with steamed milk. Increasingly popular across Australia.</p>
+        <span class="drink-ratio">Matcha powder · steamed milk · no coffee</span>
+      </div>
+    </div>
+    <div class="drink-card">
+      <div class="drink-img" style="background:#3d2a0f; position:relative;">
+        <span style="font-size:0.7rem;position:absolute;bottom:0.5rem;right:0.75rem;color:var(--caramel);letter-spacing:0.08em;">COMING SOON</span>⚡
+      </div>
+      <div class="drink-body">
+        <h3>Advanced Tips</h3>
+        <p>Steaming multiple milks simultaneously during a rush — a key skill for busy cafés.</p>
+        <span class="coming-soon">More tips coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- SECTION 2: JOB PATH -->
+<section id="jobpath">
+  <p class="section-eyebrow">Your Career Path</p>
+  <h2 class="section-title" style="color:var(--cream);">From zero to<br><em style="font-style:italic;color:var(--latte);">behind the machine</em></h2>
+  <p class="section-lead">A realistic step-by-step path based on real experience working in Newcastle and Sydney.</p>
+ 
+  <div class="path-timeline">
+    <div class="path-step">
+      <p class="step-num">Step 01</p>
+      <h3>Train at a Coffee Studio</h3>
+      <p>If you're starting from scratch, a short barista course gives you the confidence and foundation to walk into a café. Look up "coffee studio" or "barista course" in your city.</p>
+      <ul>
+        <li>3-day intensive courses can take you from zero to latte art</li>
+        <li>Cost: approximately <strong style="color:var(--latte);">AUD $400</strong> — worth it for the confidence boost</li>
+        <li>You'll practise on real commercial machines</li>
+      </ul>
+    </div>
+ 
+    <div class="path-step">
+      <p class="step-num">Step 02</p>
+      <h3>Prepare Your Resume</h3>
+      <p>Keep your Australian résumé concise — one page is ideal. Highlight any customer service background, your availability (especially weekends and early mornings), and any barista or food experience.</p>
+      <ul>
+        <li>Include: name, contact, availability, relevant experience</li>
+        <li>Mention peak-hour availability — cafés value this highly</li>
+        <li>No need to include a photo or date of birth</li>
+      </ul>
+    </div>
+ 
+    <div class="path-step">
+      <p class="step-num">Step 03</p>
+      <h3>Apply — Three Ways</h3>
+      <p>Use all three channels at the same time to maximise your chances.</p>
+      <div class="channel-grid">
+        <div class="channel">
+          <span class="channel-badge badge-best">Most Effective</span>
+          <h4>Facebook Groups</h4>
+          <p>Search "<em>your city</em> + barista job" or "hospitality jobs" on Facebook. Local job boards post daily and are highly responsive. Owners post directly — no middleman.</p>
+        </div>
+        <div class="channel">
+          <span class="channel-badge badge-best">Highly Recommended</span>
+          <h4>Walk-In</h4>
+          <p>Walk in during quiet hours (2–4pm), bring a printed résumé, and ask: <em>"Is the manager available? I'm looking for work."</em> A confident walk-in is often more effective than an online application.</p>
+        </div>
+        <div class="channel">
+          <span class="channel-badge badge-good">Also Try</span>
+          <h4>Seek & Indeed</h4>
+          <p>Great for browsing listings and reading job descriptions. Good backup channel — apply broadly and check daily for new postings.</p>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="path-step">
+      <p class="step-num">Step 04</p>
+      <h3>Start as All Rounder → Grow to Barista</h3>
+      <p>You don't need to go straight for a barista role. Starting as an all rounder gets your foot in the door, lets you learn the café environment, and often leads naturally to barista work.</p>
+      <ul>
+        <li><strong style="color:var(--latte);">All Rounder</strong>: table service, POS, cleaning, food prep — no coffee experience required</li>
+        <li><strong style="color:var(--latte);">Barista</strong>: coffee-focused, requires demonstrated skills</li>
+        <li>Use your all rounder shifts to observe the barista, ask questions, and practise when it's quiet</li>
+      </ul>
+      <div class="salary-bar">
+        <div class="salary-tag">
+          <strong>~$24 / hr</strong>
+          All Rounder
+        </div>
+        <div class="salary-tag">
+          <strong>~$30 / hr</strong>
+          Barista
+        </div>
+      </div>
+      <p style="font-size:0.78rem;color:rgba(245,240,232,0.35);margin-top:0.75rem;">Based on experience in Newcastle & Sydney. Rates may vary by employer and experience.</p>
+    </div>
+ 
+    <div class="path-step">
+      <p class="step-num">Interview</p>
+      <h3>What to Expect in the Interview</h3>
+      <p>Australian café interviews are usually relaxed and practical. Most managers won't quiz you on theory — they want to see you in action.</p>
+      <ul>
+        <li>Brief chat about your experience and availability</li>
+        <li>You'll almost always be asked to <strong style="color:var(--latte);">make a coffee on the spot</strong></li>
+        <li>If it goes well, you may receive a verbal offer on the day</li>
+        <li>Be honest about your level — it's better to say "I'm still learning latte art" than to oversell yourself</li>
+      </ul>
+    </div>
+  </div>
+</section>
+ 
+<!-- SECTION 3: VOCABULARY -->
+<section id="vocab">
+  <p class="section-eyebrow">Coffee Vocabulary</p>
+  <h2 class="section-title">Speak the language<br>of the café</h2>
+  <p class="section-lead">Essential English terms you'll hear and use every day working in an Australian café.</p>
+ 
+  <div class="vocab-tabs">
+    <button class="vocab-tab active" data-tab="ordering">🗣 Ordering Terms</button>
+    <button class="vocab-tab" data-tab="equipment">🔧 Equipment</button>
+    <button class="vocab-tab" data-tab="flavour">👅 Flavour & Strength</button>
+  </div>
+ 
+  <div class="vocab-panel active" id="tab-ordering">
+    <div class="vocab-item"><div class="vocab-en">Flat White</div><div class="vocab-zh">澳白</div><div class="vocab-def">Double espresso with velvety microfoam. Australia's most iconic coffee.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Long Black</div><div class="vocab-zh">长黑咖啡</div><div class="vocab-def">Hot water with a double shot poured over. Preserves the crema.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Piccolo</div><div class="vocab-zh">小拿铁</div><div class="vocab-def">Single ristretto with steamed milk in a small ~90ml glass.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Magic</div><div class="vocab-zh">Magic（墨尔本特有）</div><div class="vocab-def">A Melbourne-born drink: double ristretto with ~130ml of silky steamed milk.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Macchiato</div><div class="vocab-zh">玛奇朵</div><div class="vocab-def">Espresso "stained" with a small amount of steamed milk or foam.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Long Mac Topped Up</div><div class="vocab-zh">加满的长玛奇朵</div><div class="vocab-def">Double espresso topped with steamed milk — common Aussie order.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Chai Latte</div><div class="vocab-zh">印度香料拿铁</div><div class="vocab-def">Spiced tea concentrate with steamed milk. No espresso.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Matcha Latte</div><div class="vocab-zh">抹茶拿铁</div><div class="vocab-def">Japanese green tea powder with steamed milk.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Babycino</div><div class="vocab-zh">儿童咖啡</div><div class="vocab-def">Small cup of frothed milk for kids. No coffee. Usually free or $1.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Iced Latte</div><div class="vocab-zh">冰拿铁</div><div class="vocab-def">Espresso over ice and cold milk. Common in Australian summers.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Single Origin</div><div class="vocab-zh">单一产地咖啡豆</div><div class="vocab-def">Beans from one specific farm or region. Often used in black coffee.</div></div>
+    <div class="vocab-item"><div class="vocab-en">House Blend</div><div class="vocab-zh">店家混合豆</div><div class="vocab-def">A mix of beans selected by the café — usually used for milk coffees.</div></div>
+  </div>
+ 
+  <div class="vocab-panel" id="tab-equipment">
+    <div class="vocab-item"><div class="vocab-en">Portafilter</div><div class="vocab-zh">手柄 / 粉碗把手</div><div class="vocab-def">The handle that holds the coffee grounds and locks into the machine group head.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Group Head</div><div class="vocab-zh">出水口</div><div class="vocab-def">The part of the espresso machine where the portafilter attaches and water flows through.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Tamper</div><div class="vocab-zh">压粉器</div><div class="vocab-def">A tool used to press and level coffee grounds evenly in the portafilter.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Steam Wand</div><div class="vocab-zh">蒸汽棒</div><div class="vocab-def">The metal wand on the espresso machine used to heat and froth milk.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Grinder</div><div class="vocab-zh">磨豆机</div><div class="vocab-def">Grinds coffee beans to the correct particle size. Grind affects extraction speed.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Knock Box</div><div class="vocab-zh">废渣盒</div><div class="vocab-def">A container for knocking out spent coffee puck from the portafilter.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Milk Jug / Pitcher</div><div class="vocab-zh">奶缸</div><div class="vocab-def">Stainless steel jug used for steaming milk. Different sizes for different drinks.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Scales</div><div class="vocab-zh">称重秤</div><div class="vocab-def">Used to weigh the dose (input) and yield (output) for consistent espresso.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Blind Filter</div><div class="vocab-zh">清洁滤碗</div><div class="vocab-def">A solid filter basket used for back-flushing and cleaning the group head.</div></div>
+    <div class="vocab-item"><div class="vocab-en">POS System</div><div class="vocab-zh">收银系统</div><div class="vocab-def">Point-of-sale terminal for taking orders and processing payments.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Crema</div><div class="vocab-zh">油脂层</div><div class="vocab-def">The golden-brown foam that forms on top of a well-pulled espresso shot.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Pre-infusion</div><div class="vocab-zh">预浸泡</div><div class="vocab-def">A low-pressure pre-wet of the coffee puck before full extraction begins.</div></div>
+  </div>
+ 
+  <div class="vocab-panel" id="tab-flavour">
+    <div class="vocab-item"><div class="vocab-en">Body</div><div class="vocab-zh">醇厚度</div><div class="vocab-def">The weight or fullness of the coffee on your palate. Can be light, medium, or full.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Acidity</div><div class="vocab-zh">酸度</div><div class="vocab-def">A bright, lively quality in coffee — think citrus or stone fruit. Not unpleasant bitterness.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Earthy</div><div class="vocab-zh">泥土感</div><div class="vocab-def">A rich, soil-like flavour often found in Indonesian or natural-process coffees.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Fruity</div><div class="vocab-zh">果味</div><div class="vocab-def">Bright fruit notes like berry, citrus, or tropical — common in Ethiopian beans.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Nutty</div><div class="vocab-zh">坚果风味</div><div class="vocab-def">Warm flavours of almonds, hazelnuts, or peanuts — common in medium roasts.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Half Strength</div><div class="vocab-zh">半份浓度</div><div class="vocab-def">Half the usual amount of coffee — same volume of milk. Gentler caffeine hit.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Double Shot</div><div class="vocab-zh">双份浓缩</div><div class="vocab-def">Two espresso shots instead of one. Stronger coffee flavour and more caffeine.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Decaf</div><div class="vocab-zh">无咖啡因</div><div class="vocab-def">Coffee with caffeine removed. Many cafés offer a decaf option — ask if it's available.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Extra Hot</div><div class="vocab-zh">超高温</div><div class="vocab-def">Milk steamed above the usual 65°C. Customer may request this — be careful not to scald.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Ristretto</div><div class="vocab-zh">浓缩短萃</div><div class="vocab-def">A short shot — 1:1 ratio. More concentrated and sweeter than a standard espresso.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Smooth</div><div class="vocab-zh">顺滑</div><div class="vocab-def">Low acidity, balanced body — easy to drink. A common customer preference.</div></div>
+    <div class="vocab-item"><div class="vocab-en">Strong</div><div class="vocab-zh">浓</div><div class="vocab-def">More coffee flavour — usually means an extra shot. Always confirm with the customer.</div></div>
+  </div>
+</section>
+ 
+<!-- SECTION 4: FAQ + CONTACT -->
+<section id="faq">
+  <p class="section-eyebrow">FAQ</p>
+  <h2 class="section-title">Common questions</h2>
+  <p class="section-lead">Real answers based on working experience in Sydney and Newcastle.</p>
+ 
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q"><span>I have zero coffee experience. Can I still apply for a café job?</span><div class="faq-icon">+</div></button>
+      <div class="faq-a">Yes, absolutely. Start by applying for <strong>All Rounder</strong> roles — these focus on table service, cleaning, and food prep, not coffee making. It gets your foot in the door and gives you a chance to observe and learn from the barista. Once you've built confidence, you can transition to a barista role.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>Is a barista course worth it? How much does it cost?</span><div class="faq-icon">+</div></button>
+      <div class="faq-a">It can be genuinely worth it if you're starting from scratch. A 3-day intensive at a coffee studio can take you from zero to pulling decent shots and attempting latte art. Expect to pay around <strong>AUD $400</strong>. You'll train on real commercial equipment, which builds confidence before your first café shift. Search "coffee studio" in your city to find options.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>What should I say and bring when I walk in?</span><div class="faq-icon">+</div></button>
+      <div class="faq-a">Walk in during a quiet period — typically between 2pm and 4pm. Bring a printed résumé. Ask a staff member: <em>"Is the manager available? I'm looking for work."</em> Be brief, friendly, and direct. Even if they're not hiring immediately, a confident walk-in often leaves a lasting impression.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>Where are the best places to find barista jobs on Facebook?</span><div class="faq-icon">+</div></button>
+      <div class="faq-a">Search directly on Facebook for <strong>"[your city] barista job"</strong> or <strong>"[your city] hospitality jobs"</strong>. Join the local groups that come up — owners post directly in these groups, often with same-week start dates. This is generally the most effective channel for finding café work in Australia.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>Do I need an RSA certificate to work in a café?</span><div class="faq-icon">+</div></button>
+      <div class="faq-a">For most standard cafés, <strong>no</strong>. RSA (Responsible Service of Alcohol) is primarily required for venues that serve alcohol. If a café also operates as a bar or wine bar, they may ask for it — but typical coffee-focused cafés rarely make it a requirement.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>What happens in a café interview?</span><div class="faq-icon">+</div></button>
+      <div class="faq-a">Most café interviews are informal. The manager will briefly ask about your experience and confirm your availability (especially weekends and early starts). Then they'll almost certainly ask you to <strong>make a coffee on the spot</strong>. If it goes well, you may receive a verbal offer right there. Be honest about your skill level — saying "I'm still working on my latte art" is far better than overselling yourself.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span>Do all cafés require latte art?</span><div class="faq-icon">+</div></button>
+      <div class="faq-a">No — and this is important to understand when applying. Some cafés are high-volume and takeaway-focused, where speed matters more than presentation. Others are specialty or "third wave" cafés where latte art is expected. Read the <strong>job description</strong> carefully and research the café on Instagram beforehand to understand which type it is. Match your application to the right fit for your current skill level.</div>
+    </div>
+  </div>
+ 
+  <!-- CONTACT -->
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h3>Still have questions?</h3>
+      <p>Have a question that isn't covered here? Send a message and I'll do my best to help — based on real working experience in Australian cafés.</p>
+      <p style="margin-top:1rem;font-size:0.82rem;opacity:0.6;">Usually responds within a few days.</p>
+    </div>
+    <form class="contact-form" id="contactForm">
+      <div class="form-field">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="e.g. Li Wei" required />
+      </div>
+      <div class="form-field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="your@email.com" required />
+      </div>
+      <div class="form-field">
+        <label>Your Question</label>
+        <textarea name="message" rows="4" placeholder="What would you like to know?" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Question</button>
+      <div class="form-success" id="formSuccess">Thanks! Your question has been sent. I'll get back to you soon.</div>
+    </form>
+  </div>
+</section>
+ 
+<!-- FOOTER -->
+<footer>
+  <span class="brand">Aussie Barista Guide</span>
+  <p>A practical resource for international students finding work in Australian cafés.</p>
+</footer>
+ 
+<script>
+  // Vocab tabs
+  document.querySelectorAll('.vocab-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.vocab-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.vocab-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+ 
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+ 
+  // Contact form → mailto
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = this.name.value;
+    const email = this.email.value;
+    const message = this.message.value;
+    const subject = encodeURIComponent('Barista Guide Question from ' + name);
+    const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nQuestion:\n' + message);
+    window.location.href = 'mailto:wujingman116@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('formSuccess').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
 </html>
